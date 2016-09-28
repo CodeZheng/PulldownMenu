@@ -10,17 +10,13 @@
 
 @protocol SelecteMenuDelegate <NSObject>
 
-- (void)firstBtn;
-- (void)secondBtn;
-- (void)thirdBtn;
-- (void)forthBtn;
+- (void)dealWithClickBtn:(UIButton *)sender;
 
 @end
 
 @interface MenuView : UIView
-@property (strong, nonatomic) UIButton *btn1;
-@property (strong, nonatomic) UIButton *btn2;
-@property (strong, nonatomic) UIButton *btn3;
-@property (strong, nonatomic) UIButton *btn4;
+
 @property (weak, nonatomic) id<SelecteMenuDelegate> menuDelegate;
+
+- (void)createMenuBtnCount:(NSInteger)count buttonTitle:(NSArray *)titleArray backgroundColor:(NSArray *)colorArray;
 @end

@@ -26,6 +26,7 @@
     self.menuV = [[MenuView alloc]initWithFrame:CGRectMake(ScreenWidth - 110, 74, 100, 300)];
     self.menuV.hidden = YES;
     self.menuV.menuDelegate = self;
+    [self.menuV createMenuBtnCount:4 buttonTitle:@[@"red",@"green",@"yellow",@"blue"] backgroundColor:@[[UIColor redColor],[UIColor greenColor],[UIColor yellowColor],[UIColor blueColor]]];
     [self.view addSubview:self.menuV];
 }
 - (IBAction)menuBtnAction:(id)sender {
@@ -37,17 +38,19 @@
         self.menuV.hidden = NO;
     }
 }
-- (void)firstBtn {
-    self.view.backgroundColor = [UIColor redColor];
-}
-- (void)secondBtn {
-    self.view.backgroundColor = [UIColor greenColor];
-}
-- (void)thirdBtn {
-    self.view.backgroundColor = [UIColor yellowColor];
-}
-- (void)forthBtn {
-    self.view.backgroundColor = [UIColor blueColor];
+- (void)dealWithClickBtn:(UIButton *)sender {
+    if (sender.tag == 100) {
+        self.view.backgroundColor = [UIColor redColor];
+    }
+    if (sender.tag == 101) {
+        self.view.backgroundColor = [UIColor greenColor];
+    }
+    if (sender.tag == 102) {
+        self.view.backgroundColor = [UIColor yellowColor];
+    }
+    if (sender.tag == 103) {
+        self.view.backgroundColor = [UIColor blueColor];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
